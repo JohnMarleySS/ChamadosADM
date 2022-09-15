@@ -1,10 +1,37 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
+import './signup.css'
+
 function SignUp() {
-    return (
-      <div>
-        <h1>Pagina de registro</h1>
-      </div>
-    );
+
+  const [email, setEmail] = useState('');
+  const [nome, setNome] = useState('');
+  const [senha, setSenha] = useState('');
+
+  function handSubmit(e){
+    e.preventDefault();
+    alert('clicou')
   }
-  
-  export default SignUp;
-  
+
+  return (
+    
+    
+    <div className='container-center'>
+      <div className='register'>
+        <div className='register-area'>
+        </div>
+        <form onSubmit={handSubmit}>
+          <input type="text" placeholder='Nome' value={nome} onChange={(e) => setNome(e.target.value)} />
+          <input type="text" placeholder='E-mail' value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="password" placeholder='Senha' value={senha} onChange={(e) => setSenha(e.target.value)} />
+          <button type="submit">Register</button>
+        </form>
+
+        <Link to="/">Já possuo uma conta</Link>
+      </div>
+
+    </div>
+  );
+}
+
+export default SignUp;
