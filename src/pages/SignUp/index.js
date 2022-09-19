@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AuthContext } from '../../contexts/auth'
 import { Link } from 'react-router-dom'
 import './signup.css'
 
@@ -8,9 +9,15 @@ function SignUp() {
   const [nome, setNome] = useState('');
   const [senha, setSenha] = useState('');
 
+  const { signUp } = useContext(AuthContext);
+
   function handSubmit(e){
     e.preventDefault();
-    alert('clicou')
+
+    if(nome !== '' && email !== '' && senha !== ''){
+      signUp(email, senha, nome)
+    }
+
   }
 
   return (
