@@ -1,0 +1,120 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+.sidebar {
+    width: 300px;
+    background-color: #121212;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar div {
+    background: url('../../assets/cover.png');
+    background-color: #121212;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+}
+
+.sidebar div{
+    padding-top: 30px;
+}
+
+.sidebar div img{
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+
+    -webkit-filter: drop-shadow(2px 3px 6px #121212);
+    filter: drop-shadow(2px 3px 6px #121212);
+    object-fit: cover;
+}
+.sidebar a {
+    color: #fff;
+    padding: 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    transition: ease-in-out 0.4s;
+
+}
+
+.sidebar a svg {
+    margin-right: .9em;
+    margin-left: .9em;
+}
+
+.sidebar a:hover {
+    background-color: #181C2E;
+    color: #fff
+}
+
+.content {
+    margin-left: 300px;
+    padding: 1px 16px;
+}
+
+@media screen and (max-width: 700px) {
+    
+    .sidebar {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+
+    .sidebar a svg{
+        display:  none;
+    }
+
+    .sidebar div {
+        width: 100px;
+        height: auto;
+    }
+
+    .sidebar div {
+        background: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0px;
+    }
+    .sidebar div img {
+        width: 40px;
+        height: 40px;
+
+    }
+    .sidebar a {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    
+    .sidebar a {
+        font-size: 0.8em;
+    }
+    .sidebar div img {
+        width: 30px;
+        height: 30px;
+
+    }
+
+}
