@@ -8,22 +8,21 @@ export default function RouteWrapper({
     ...rest
 }) {
 
-
     const { signed, loading } = useContext(AuthContext)
 
-    if(loading){
-        return(
+    if (loading) {
+        return (
             <div>
-
+                
             </div>
         );
     }
 
-    if(!signed && isPrivate){
+    if (!signed && isPrivate) {
         return <Redirect to="/" />
     }
 
-    if(signed && !isPrivate){
+    if (signed && !isPrivate) {
         return <Redirect to="/dashboard" />
     }
 
@@ -34,4 +33,5 @@ export default function RouteWrapper({
                 <Component {...props} />
             )}
         />
-    );}
+    );
+}

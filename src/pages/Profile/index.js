@@ -27,17 +27,30 @@ export default function Profile() {
 
                 <div className='container'>
                     <form className='form-profile'>
-                        <label className='label-avatar'></label>
-                        <span>
-                            <FiUpload color='#fff' size={25} />
-                        </span>
-                        <input type="file" accept="image/*" /><br />
+                        <label className='label-avatar'>
+                            <span>
+                                <FiUpload color='#fff' size={25} />
+                            </span>
+                            <input type="file" accept="image/*" /><br />
 
-                        {avatarUrl === null ?
-                            <img src={avatar} width="250" height="250" alt="Foto de perfil do usuario" />
-                            :
-                            <img src={avatarUrl} width="250" height="250" alt="Foto de perfil do usuario" />
-                        }
+                            {avatarUrl === null ?
+                                <img src={avatar} width="280px" height="280px" alt="Foto de perfil do usuario" />
+                                :
+                                <img src={avatarUrl} width="280px" height="280px" alt="Foto de perfil do usuario" />
+                            }
+                        </label>
+                        
+                        <label>Nome:</label>
+                        <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
+
+                        <label>Email:</label>
+                        <input type="text" value={email} disabled={true} onChange={(e) => setEmail(e.target.value)} />
+
+                        <button type='submit'>Salvar</button>
+
+                        <div className='container'>
+                            <button className='logout-btn'>Sair</button>
+                        </div>
                     </form>
                 </div>
             </div>
