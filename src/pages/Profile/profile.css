@@ -1,20 +1,20 @@
-.container {
-    display: flex;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 1.8em;
-    align-items: center;
+@font-face {
+    font-family: 'Poppins';
+    src: url(https://fonts.googleapis.com/css?family=Poppins);
 }
 
+
 .label-avatar {
-    width: 280px;
-    height: 280px;
+    margin-top: -30px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     cursor: pointer;
 }
+
 .label-avatar input {
     display: none;
 }
@@ -26,7 +26,7 @@
     transition: all 0.5s;
 }
 
-.label-avatar span:hover{
+.label-avatar span:hover {
     opacity: 1;
     transform: scale(1.4);
 }
@@ -37,32 +37,47 @@
     object-fit: cover;
 }
 
-.form-profile label {
-    margin-bottom: .5em;
-    font-size: 1.4em;
+.form-profile label:nth-child(2) {
+    margin-top: 40px;
+
 }
 
-.form-profile input,textarea, selct{
+.form-profile label {
+    margin-bottom: .5em;
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'Poppins';
+}
+
+.form-profile input{
     margin-bottom: 1em;
-    padding: .7em;
+    padding: .8em;
     border: 0;
     border-radius: 5px;
-    max-width: 600px;
+    background-color: #EFEFEF;
+    max-width: 339px;
+    color: #323232;
+    font-family: 'Poppins';
 }
 
 .form-profile input:disabled {
     cursor: not-allowed;
 }
 
-.form-profile button {
-    max-width: 600px;
+.login-btn {
+    width: 150px;
 }
+
 .logout-btn {
-    padding: 8px 20px;
-    background-color: transparent;
-    border: 1px solid #121212;
-    border-radius: 1.5em;
+    width: 150px;
+    background-color: #fff;
+    border: 1px solid #181c2e;
+    color: #181c2e;
+}
+
+.container-buttons {
+    padding: 0;
+    max-width: 339px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 }

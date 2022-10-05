@@ -96,15 +96,15 @@ function AuthProvider({ children }) {
         localStorage.setItem('SistemaUser', JSON.stringify(data))
     }
 
-    async function signOut(){
-        await firebase.auth().signOut();
+    function signOut(){
+        firebase.auth().signOut();
         localStorage.removeItem('SistemaUser')
         setUser(null)
     }
 
 
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, loading, signUp, signOut, signIn, loadingAuth }}>
+        <AuthContext.Provider value={{ signed: !!user, user, loading, signUp, signOut, signIn, loadingAuth, setUser, storageUser }}>
             {children}
         </AuthContext.Provider>
 
